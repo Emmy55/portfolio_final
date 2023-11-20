@@ -1,0 +1,9 @@
+ErrorDocument 404 /index.html
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+#+DirectoryIndex
+#=["index.html","index.php","index.htm","index.cgi","index.py"]
+DirectoryIndex index.html index.php index.htm index.cgi index.py
+#-DirectoryIndex
